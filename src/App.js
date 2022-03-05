@@ -23,7 +23,7 @@ function App() {
               <Route exact path="/exchanges" element={<Exchanges />} />
               <Route
                 exact
-                path="/Routecryptocurrencies"
+                path="/cryptocurrencies"
                 element={<Cryptocurrencies />}
               />
               <Route
