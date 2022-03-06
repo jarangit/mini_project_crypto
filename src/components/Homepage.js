@@ -67,7 +67,7 @@ const Homepage = () => {
               <Link to="/news">Show Mores</Link>
             </Title>
           </div>
-          <News />
+          <News simplified/>
         </>
       )}
     </React.Fragment>

@@ -28,7 +28,7 @@ function App() {
               />
               <Route
                 exact
-                path="/crypto/:RoutecoinId"
+                path="/crypto/:coinId"
                 element={<CryptoDetail />}
               />
               <Route exact path="/news" element={<News />} />

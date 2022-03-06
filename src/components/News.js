@@ -7,14 +7,14 @@ import moment from "moment";
 
 const News = ({ simplified }) => {
   const [newsCategory, setNewsCategory] = useState("Cryptocurrency");
-  const { data: cryptoNews } = useGetCryptoNewsQuery({
+  const { data: cryptoNews , isFetching} = useGetCryptoNewsQuery({
     newsCategory,
     count: simplified ? 6 : 12,
   });
   const { data: cryptoApi } = useGetCryptosQuery(100);
-  console.log(cryptoNews);
+  console.log(isFetching);
 
-  if (!cryptoNews) return "Loadding";
+  if ( isFetching )return "Loadding";
   return (
     <div className="new_box">
       {!simplified && (
