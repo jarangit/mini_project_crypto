@@ -16,6 +16,7 @@ import {
   NumberOutlined,
   ThunderboltOutlined,
 } from "@ant-design/icons";
+
 import HTMLReactParser from "html-react-parser";
 import LineChart from "./chart/LineChart";
 
@@ -94,7 +95,7 @@ const CryptoDetail = () => {
       icon: <ExclamationCircleOutlined />,
     },
   ];
-  console.log(millify(cryptoDetails?.price));
+  // console.log(millify(cryptoDetails?.price));
   if (isFetching) {
     return "Loading";
   }
@@ -113,7 +114,7 @@ const CryptoDetail = () => {
       <div>
         <select name="coin_detail_day" id="coin_detail_day">
           {time.map((item, key) => (
-            <option value={item}>{item}</option>
+            <option  key = {key} value={item}>{item}</option>
           ))}
         </select>
       </div>
@@ -134,8 +135,8 @@ const CryptoDetail = () => {
         </div>
 
         <div className="coin_detail_stats_list">
-          {stats.map(({ icon, title, value }) => (
-            <div className="coin_detail_stats_item">
+          {stats.map(({ icon, title, value }, key) => (
+            <div  key = {key} className="coin_detail_stats_item">
               <div>{icon}</div>
               <div>{title}</div>
               <div>{value}</div>
@@ -149,7 +150,7 @@ const CryptoDetail = () => {
             An overview showing the statistics of {cryptoDetails.name}, such as
             the base and quote currency, the rank, and trading volume.
           </p>
-          {genericStats.map(({ icon, title, value }, key) => (
+          {genericStats.map(({ icon, title, value },key) => (
             <div className="coin_detail_other_stats_info_item" key={key}>
               <div>{icon}</div>
               <div>{title}</div>
