@@ -15,6 +15,7 @@ const Navbar = () => {
           src={
             "https://www.iconpacks.net/icons/2/free-cryptocurrency-coin-icon-2422-thumb.png"
           }
+          alt=""
         />
         <div className="logo">
           <Link to="/">

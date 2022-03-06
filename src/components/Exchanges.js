@@ -1,6 +1,6 @@
 import React from 'react'
-import millify from 'millify'
-import HTMLReactParser from 'html-react-parser'
+// import millify from 'millify'
+// import HTMLReactParser from 'html-react-parser'
 
 import {useGetExchangesQuery} from '../services/cryptoApi'
 const Exchanges = () => {
