@@ -22,7 +22,7 @@ import LineChart from "./chart/LineChart";
 
 const CryptoDetail = () => {
   const { coinId } = useParams();
-  const [timeperiod, settimeperiod] = useState("7d");
+  const [timeperiod] = useState("7d");
   const { data, isFetching } = useGetCryptoDetailQuery(coinId);
   const { data: coinHistory } = useGetCryptoHistoryQuery({
     coinId,
