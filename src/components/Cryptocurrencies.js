@@ -3,6 +3,7 @@ import { Card, Row, Col, Input } from "antd";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import millify from "millify";
 import { Link } from "react-router-dom";
+
 const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
   console.log(simplified);
