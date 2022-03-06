@@ -1,5 +1,4 @@
 import React from "react";
-import {  Menu, Typography, Avatar } from "antd";
 import { Link } from "react-router-dom";
 import {
   HomeOutlined,
@@ -9,32 +8,54 @@ import {
 } from "@ant-design/icons";
 const Navbar = () => {
   return (
-    <div className="nav-container">
-      <div className="logo-container">
-        <Avatar
+    <div className="nav_container">
+      <div className="logo_container">
+        <img
+          width={50}
           src={
             "https://www.iconpacks.net/icons/2/free-cryptocurrency-coin-icon-2422-thumb.png"
           }
-          size="large"
         />
-        <Typography.Title level={2} className="logo">
-          <Link to="/">Crypto</Link>
-        </Typography.Title>
+        <div className="logo">
+          <Link to="/">
+            <h1>Crypto</h1>
+          </Link>
+        </div>
       </div>
-      <Menu theme="dark">
-        <Menu.Item icon={<HomeOutlined />}>
-          <Link to="/">Home</Link>
-        </Menu.Item>
-        <Menu.Item icon={<FundOutlined />}>
-          <Link to="/cryptocurrencies">Cryptocurrencise</Link>
-        </Menu.Item>
-        <Menu.Item icon={<MoneyCollectOutlined />}>
-          <Link to="/exchanges">Exchanges</Link>
-        </Menu.Item>
-        <Menu.Item icon={<BulbOutlined />}>
-          <Link to="/news">News</Link>
-        </Menu.Item>
-      </Menu>
+      <div className="side_menu">
+        <div className="side_menu_item">
+          <Link to="/">
+            <span>
+              <HomeOutlined />
+            </span>
+            Home
+          </Link>
+        </div>
+        <div className="side_menu_item">
+          <Link to="/cryptocurrencies">
+            <span>
+              <FundOutlined />
+            </span>
+            Cryptocurrencise
+          </Link>
+        </div>
+        <div className="side_menu_item">
+          <Link to="/">
+            <span>
+              <MoneyCollectOutlined />
+            </span>
+            Exchanges
+          </Link>
+        </div>
+        <div className="side_menu_item">
+          <Link to="/">
+            <span>
+              <BulbOutlined />
+            </span>
+            News
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

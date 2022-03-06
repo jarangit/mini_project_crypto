@@ -1,0 +1,29 @@
+.nav_container {
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(78, 78, 78, 0.2);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding: 20px;
+  border-right: 1px solid gray;
+}
+.logo_container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+
+.side_menu_item{
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.side_menu_item span{
+  margin-right: 10px;
+}

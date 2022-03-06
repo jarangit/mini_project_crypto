@@ -1,0 +1,28 @@
+.home_show_data{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.home_show_data_item{
+  background-color: var(--jr_black_fade);
+  padding: 20px;
+  min-width: 200px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.home_show_data_item .home_show_data_item_num{
+  font-size: 30px;
+}
+.home_heading_container{
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.show_more>a{
+  color: var(--jr_pp);
+}

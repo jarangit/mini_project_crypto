@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Card, Row, Col, Input } from "antd";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import millify from "millify";
 import { Link } from "react-router-dom";
@@ -21,39 +20,44 @@ const Cryptocurrencies = ({ simplified }) => {
 
       setcryptos(filter);
     }
-  }, [cryptosList, searchTerm,cryptos]);
+  }, [cryptosList, searchTerm, cryptos]);
 
   console.log(cryptos);
   if (isFetching) return "Loading";
   return (
     <React.Fragment>
       {!simplified && (
-        <div className="search-crypto">
-          <Input
+        <div className="search_rypto">
+          <input
             placeholder="Search"
             onChange={(e) => setsearchTerm(e.target.value.toLowerCase())}
           />
         </div>
       )}
       {cryptos && (
-        <Row gutters={[32, 32]} className="crypto-card-container">
+        <div className="crypto_card_container">
           {cryptos?.map((item, key) => (
-            <Col xs={24} sm ={12} lg={6} key={key} className="crypto-card">
+            <div className="crypto_card">
               <Link to={`/crypto/${item.uuid} `} key={item.uuid}>
-                <Card
-                  title={`${item.rank}. ${item.name}`}
-                  extra={<img className="crypto-image" src={item.iconUrl} alt = {item.iconUrl} />}
-                  hoverable
-                >
+                <div>
+                  <div>
+                    {item.rank} {item.name}
+                  </div>
+                  <img
+                    className="crypto_image"
+                    src={item.iconUrl}
+                    alt={item.iconUrl}
+                    width={30}
+                  />
                   <p>Price:{millify(item.price)}</p>
                   <p>Market Cap: {millify(item.marketCap)}</p>
                   <p>Daily Change: {item.change}</p>
-                </Card>
+                </div>
               </Link>
-            </Col>
+            </div>
           ))}
           {cryptos.length === 0 && searchTerm ? "Not Foumd" : ""}
-        </Row>
+        </div>
       )}
     </React.Fragment>
   );

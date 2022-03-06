@@ -95,7 +95,6 @@ const CryptoDetail = () => {
       icon: <ExclamationCircleOutlined />,
     },
   ];
-  // console.log(millify(cryptoDetails?.price));
   if (isFetching) {
     return "Loading";
   }

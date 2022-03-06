@@ -1,73 +1,73 @@
 import React from "react";
 import millify from "millify";
-import { Typography, Row, Col, Statistic } from "antd";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import { Link } from "react-router-dom";
 import { Cryptocurrencies, News } from "../components";
 
-const { Title } = Typography;
 const Homepage = () => {
   const { data, isFectching } = useGetCryptosQuery(10);
   console.log(isFectching);
   const glodbalStats = data?.data?.stats;
   return (
     <React.Fragment>
-      <Title level={2} className="heading">
-        Global Crypto Stats
-      </Title>
+      <div className="heading">
+        <h1>Global Crypto Stats</h1>
+      </div>
       {glodbalStats && (
         <>
-          <Row>
-            <Col span={12}>
-              <Statistic
-                title="Total Crptocurrencies"
-                value={glodbalStats.total}
-              />
-            </Col>
-            <Col span={12}>
-              <Statistic
-                title="Total Exchanges"
-                value={millify(glodbalStats.totalExchanges)}
-              />
-            </Col>
-            <Col span={12}>
-              <Statistic
-                title="Total Market Cap"
-                value={millify(glodbalStats.totalMarketCap)}
-              />
-            </Col>
-            <Col span={12}>
-              <Statistic
-                title="Total 24h Volome"
-                value={millify(glodbalStats.total24hVolume)}
-              />
-            </Col>
-            <Col span={12}>
-              <Statistic
-                title="Total Markets"
-                value={millify(glodbalStats.totalMarkets)}
-              />
-            </Col>
-          </Row>
-          <div className="home-heading-container">
-            <Title level={2} className="home-title">
-              Top 10 in the world
-            </Title>
-            <Title level={3} className="show-more">
+          <div className="home_show_data">
+            <div className="home_show_data_item">
+              <div>Total Crptocurrencies</div>
+              <div className="home_show_data_item_num">
+                {millify(glodbalStats.total)}
+              </div>
+            </div>
+            <div className="home_show_data_item">
+              <div>Total Exchanges</div>
+              <div className="home_show_data_item_num">
+                {millify(glodbalStats.totalExchanges)}
+              </div>
+            </div>
+            <div className="home_show_data_item">
+              <div>Total Market Cap</div>
+              <div className="home_show_data_item_num">
+                {millify(glodbalStats.totalMarketCap)}
+              </div>
+            </div>
+            <div className="home_show_data_item">
+              <div>Total 24h Volome</div>
+              <div className="home_show_data_item_num">
+                {millify(glodbalStats.total24hVolume)}
+              </div>
+            </div>
+            <div className="home_show_data_item">
+              <div>Total Markets</div>
+              <div className="home_show_data_item_num">
+                {millify(glodbalStats.total24hVolume)}
+              </div>
+            </div>
+            <div className="home_show_data_item">
+              <div>Total Crptocurrencies</div>
+              <div className="home_show_data_item_num">
+                {millify(glodbalStats.total)}
+              </div>
+            </div>
+          </div>
+          <div className="home_heading_container">
+            <h1 className="home_title">Top 10 in the world</h1>
+            <h1 className="show_more">
               <Link to="/cryptocurrencies">Show Mores</Link>
-            </Title>
+            </h1>
           </div>
-          <Cryptocurrencies simplified = {true}/>
+          <Cryptocurrencies simplified={true} />
 
-          <div className="home-heading-container">
-            <Title level={2} className="home-title">
-              News
-            </Title>
-            <Title level={3} className="show-more">
+          <div className="home_heading_container">
+            <h1 className="home_title">News</h1>
+            <div className="show_more">
               <Link to="/news">Show Mores</Link>
-            </Title>
+            </div>
           </div>
-          <News simplified/>
+          <News simplified />
         </>
       )}
     </React.Fragment>

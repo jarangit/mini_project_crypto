@@ -37,7 +37,7 @@ const News = ({ simplified }) => {
         >
           <a href={item.url} target="_blank" rel="noreferrer">
             <div className="new_item_img_box">
-              <img src={item.image?.thumbnail?.contentUrl || ""} alt="" />
+              <img src={item.image?.thumbnail?.contentUrl || ""} alt="" width={30}/>
               <div className="new_item_title">{item.name}</div>
               <p className="new_item_desc">
                 {item.description.length > 100
@@ -51,6 +51,7 @@ const News = ({ simplified }) => {
                     src={item.provider[0]?.image?.thumbnail?.contentUrl || ""}
                     alt=""
                     className="new_avatar"
+                    width={30}
                   />
                   <p className="new_item_avatar_title">
                     {item.provider[0]?.name}
