@@ -1,18 +1,16 @@
 :root {
-  --jr_black: #1b1922;
-  --jr_black_fade: rgb(26, 25, 30, 0.4);
+  --jr_black: #171721;
+  --jr_black_fade: rgb(33, 32, 37);
   --jr_pp: #ca50f7;
-  --jr_yl:#f5d64c;
-  --jr_red:#f76656;
+  --jr_yl: #f5d64c;
+  --jr_red: #f76656;
 }
-
+html {
+  background: #232228;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 body {
-  background-image: linear-gradient(
-    311deg,
-    #000000 42%,
-    #612c31 59%,
-    #28507d 100%
-  );
   color: white;
   background-size: cover;
   background-repeat: no-repeat;
@@ -20,6 +18,7 @@ body {
 
 a {
   color: white;
+  text-decoration: none;
 }
 .main {
   transition: 0.5s;

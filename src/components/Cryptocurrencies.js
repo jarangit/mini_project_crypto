@@ -39,21 +39,23 @@ const Cryptocurrencies = ({ simplified }) => {
           {cryptos?.map((item, key) => (
             <div className="crypto_card">
               <Link to={`/crypto/${item.uuid} `} key={item.uuid}>
-                <div>
-                  <div>
-                    {item.rank} {item.name}
-                  </div>
+                <div style={{textAlign: "center"}} >
                   <img
                     className="crypto_image"
                     src={item.iconUrl}
                     alt={item.iconUrl}
-                    width={30}
                   />
-                  <p>Price:{millify(item.price)}</p>
-                  <p>Market Cap: {millify(item.marketCap)}</p>
-                  <p>Daily Change: {item.change}</p>
+                </div>
+                <div className="crypto_desc">
+                  <div className="crypto_name">
+                    {item.rank} {item.name}
+                  </div>
+                  <p>MC: {millify(item.marketCap)}</p>
+                  <p>DC: {item.change}</p>
                 </div>
               </Link>
+                  <div className="crypto_price">{millify(item.price)}</div>
+              
             </div>
           ))}
           {cryptos.length === 0 && searchTerm ? "Not Foumd" : ""}

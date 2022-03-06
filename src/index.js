@@ -8,6 +8,8 @@ import store from "./app/store";
 import { Provider } from "react-redux";
 import './styles/nav.css'
 import './styles/home.css'
+import './styles/crypto.css'
+import './styles/new.css'
 ReactDOM.render(
   <React.StrictMode>
     <Router>

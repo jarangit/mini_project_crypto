@@ -1,28 +1,29 @@
-.home_show_data{
+.home_show_data {
   display: flex;
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.home_show_data_item{
-  background-color: var(--jr_black_fade);
+.home_show_data_item {
+  background-color: var(--jr_black);
   padding: 20px;
   min-width: 200px;
   border-radius: 10px;
   font-weight: 600;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.home_show_data_item .home_show_data_item_num{
+.home_show_data_item .home_show_data_item_num {
   font-size: 30px;
 }
-.home_heading_container{
+.home_heading_container {
   margin: 20px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.show_more>a{
+.show_more > a {
   color: var(--jr_pp);
 }
