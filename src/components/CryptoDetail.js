@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import millify from "millify";
-import { useGetCryptoDetailQuery } from "../services/cryptoApi";
+import {
+  useGetCryptoDetailQuery,
+  useGetCryptoHistoryQuery,
+} from "../services/cryptoApi";
 import {
   MoneyCollectOutlined,
   DollarCircleOutlined,
@@ -14,10 +17,16 @@ import {
   ThunderboltOutlined,
 } from "@ant-design/icons";
 import HTMLReactParser from "html-react-parser";
+import LineChart from "./chart/LineChart";
 
 const CryptoDetail = () => {
   const { coinId } = useParams();
+  const [timeperiod, settimeperiod] = useState("7d");
   const { data, isFetching } = useGetCryptoDetailQuery(coinId);
+  const { data: coinHistory } = useGetCryptoHistoryQuery({
+    coinId,
+    timeperiod,
+  });
   const cryptoDetails = data?.data?.coin;
   const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
 
@@ -85,7 +94,7 @@ const CryptoDetail = () => {
       icon: <ExclamationCircleOutlined />,
     },
   ];
-  console.log(data);
+  console.log(millify(cryptoDetails?.price));
   if (isFetching) {
     return "Loading";
   }
@@ -108,6 +117,12 @@ const CryptoDetail = () => {
           ))}
         </select>
       </div>
+
+      <LineChart
+        coinHistory={coinHistory}
+        curentPrice={millify(cryptoDetails?.price)}
+        coinName={cryptoDetails?.name}
+      />
 
       <div className="coin_detail_stats">
         <div className="coin_detail_stats_title">
@@ -134,8 +149,8 @@ const CryptoDetail = () => {
             An overview showing the statistics of {cryptoDetails.name}, such as
             the base and quote currency, the rank, and trading volume.
           </p>
-          {genericStats.map(({ icon, title, value }) => (
-            <div className="coin_detail_other_stats_info_item">
+          {genericStats.map(({ icon, title, value }, key) => (
+            <div className="coin_detail_other_stats_info_item" key={key}>
               <div>{icon}</div>
               <div>{title}</div>
               <div>{value}</div>
@@ -145,16 +160,12 @@ const CryptoDetail = () => {
       </div>
 
       <div className="coin_detail_coin_desc_link">
-        <h2>
-          What is {cryptoDetails.name}
-        </h2>
-        <p>
-          {HTMLReactParser(cryptoDetails.description)}
-        </p>
+        <h2>What is {cryptoDetails.name}</h2>
+        <p>{HTMLReactParser(cryptoDetails.description)}</p>
         <h3>{cryptoDetails.name} Links</h3>
 
         {cryptoDetails.links?.map((item, key) => (
-          <ul key = {key}>
+          <ul key={key}>
             <li>{item.type}</li>
             <li>{item.name}</li>
           </ul>
