@@ -42,32 +42,43 @@ const LineChart = ({ coinHistory, curentPrice, coinName }) => {
         label: "Price In USD",
         data: coinPrice,
         fill: false,
-        backgroundColor: "#f5d64c",
-        borderColor: "#f76656",
+        backgroundColor: "#3578ba",
+        borderColor: "#2ceac4",
+     
       },
     ],
   };
 
   const options = {
-    elements: {
-      line: {
-        tension: 0, // disables bezier curves
-      },
-    },
-    plugings: {
-      title: {
+  
+    plugins: {
+      legend: {
         display: false,
       },
     },
     scales: {
-      yAxes: [
-        {
-          ticks: {
-            display:false,
-            beginAtZero: true,
-          },
+      y: {
+        // beginAtZero: true,
+        grace: "10%",
+        ticks: {
+          color: "#f96934",
+          display: true,
         },
-      ],
+        grid: {
+          color: "#515151",
+        },
+      },
+      x: {
+        max: 50,
+        ticks: {
+          display: false,
+        },
+        grid: {
+          color: "white",
+          display: false,
+          
+        },
+      },
     },
   };
   return (

@@ -37,16 +37,23 @@ a {
 }
 
 .hamberger{
-  position: absolute;
+  /* position: absolute; */
   left: 20px;
   display: none;
   
+}
+
+.nav_but_close{
+  display: none;
 }
 @media only screen and (max-width: 768px) {
   .main{
     margin-left: 0px;
   }
   .hamberger{
+    display: block;
+  }
+  .nav_but_close{
     display: block;
   }
 }

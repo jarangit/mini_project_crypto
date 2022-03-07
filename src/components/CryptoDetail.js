@@ -122,11 +122,13 @@ const CryptoDetail = () => {
         </select>
       </div> */}
 
-      <LineChart
+     <div style={{margin: "30px 0"}} >
+     <LineChart
         coinHistory={coinHistory}
         curentPrice={millify(cryptoDetails?.price)}
         coinName={cryptoDetails?.name}
       />
+     </div>
 
       <div className="coin_detail_stats">
         <div className="coin_detail_stats_title">

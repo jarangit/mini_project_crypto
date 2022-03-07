@@ -4,7 +4,7 @@ import { HomeOutlined, BulbOutlined, FundOutlined, CloseCircleOutlined } from "@
 const Navbar = ({ active, close }) => {
   return (
     <div className={`nav_container ${active ? "active" : ""} `}>
-      <div onClick={() => close(false)}>
+      <div onClick={() => close(false)} className= "nav_but_close">
           <CloseCircleOutlined style={{fontSize: "24px", float: "right", marginBottom: "20px", color: "#ff56ba"}} />
         </div>
       <div className="logo_container">
