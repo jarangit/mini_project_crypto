@@ -32,18 +32,18 @@ const News = ({ simplified }) => {
   //   },
   // };
 
-  useEffect(() => {
-    for (let i = 0; i < cryptoApi?.data?.coins?.length; i++) {
-      const element = cryptoApi?.data?.coins[i];
-      let obj = {};
-      if (element) {
-        obj["value"] = element.name;
-        obj["label"] = element.name;
-        optionSelect.push(obj);
-      }
-      console.log(optionSelect);
-    }
-  }, [cryptoApi]);
+  // useEffect(() => {
+  //   for (let i = 0; i < cryptoApi?.data?.coins?.length; i++) {
+  //     const element = cryptoApi?.data?.coins[i];
+  //     let obj = {};
+  //     if (element) {
+  //       obj["value"] = element.name;
+  //       obj["label"] = element.name;
+  //       optionSelect.push(obj);
+  //     }
+  //     console.log(optionSelect);
+  //   }
+  // }, [cryptoApi]);
 
   if (isFetching) return "Loadding";
   return (
