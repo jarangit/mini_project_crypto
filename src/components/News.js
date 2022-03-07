@@ -31,18 +31,20 @@ const News = ({ simplified }) => {
       )}
       <div className="new_box">
         {cryptoNews.value.map((item, key) => (
-          <div
-            key={key}
-            className="new_item"
-          >
+          <div key={key} className="new_item">
             <a href={item.url} target="_blank" rel="noreferrer">
               <div>
-                <img
-                  src={item.image?.thumbnail?.contentUrl || ""}
-                  alt=""
-                  className="new_item_img"
-                />
-                <div className="new_item_title">{item.name}</div>
+                <div className="new_item_box_title">
+                  <img
+                    src={
+                      item.image?.thumbnail?.contentUrl ||
+                      "https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-6.png"
+                    }
+                    alt=""
+                    className="new_item_img"
+                  />
+                  <div className="new_item_title">{item.name}</div>
+                </div>
                 <p className="new_item_desc">
                   {item.description.length > 100
                     ? `${item.description.substring(0, 100)}...`
@@ -58,11 +60,13 @@ const News = ({ simplified }) => {
                       width={30}
                     />
                   </div>
-                    <p className="new_item_avatar_title">
-                      {item.provider[0]?.name}
-                    </p>
+                  <p className="new_item_avatar_title">
+                    {item.provider[0]?.name}
+                  </p>
                 </div>
-                  <span className="new_date" >{moment(item.dataPublished).startOf("ss").fromNow()}</span>
+                <span className="new_date">
+                  {moment(item.dataPublished).startOf("ss").fromNow()}
+                </span>
               </div>
             </a>
           </div>

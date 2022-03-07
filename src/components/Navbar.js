@@ -13,7 +13,7 @@ const Navbar = () => {
         <img
           width={50}
           src={
-            "https://www.iconpacks.net/icons/2/free-cryptocurrency-coin-icon-2422-thumb.png"
+            "https://upload.wikimedia.org/wikipedia/commons/9/97/Cryptocurrency_Gold.png"
           }
           alt=""
         />

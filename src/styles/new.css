@@ -12,13 +12,13 @@
 }
 .new_item_img{
   width: 100px;
+  border-radius: 10px;
 }
 .new_item_title{
   font-weight: 600;
 }
 
 .new_item_desc{
-  font-size: 8px;
 
 }
 
@@ -26,7 +26,6 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 10px;
   color: var(--jr_yl);
   margin-bottom: 20%;
 }
@@ -39,6 +38,10 @@
   position: absolute;
   bottom: 10px;
   left: 20px;
-  font-size: 8px;
   color: var(--jr_red);
+}
+
+.new_item_box_title{
+  display: flex;
+  gap: 10px;
 }
