@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewApi";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 // import Select from "react-select";
 import moment from "moment";
 
 const News = ({ simplified }) => {
-  const [optionSelect] = useState([]);
+  // const [optionSelect] = useState([]);
   const [newsCategory] = useState("Cryptocurrency");
   const { data: cryptoNews, isFetching } = useGetCryptoNewsQuery({
     newsCategory,
     count: simplified ? 6 : 12,
   });
-  const { data: cryptoApi } = useGetCryptosQuery(100);
+  // const { data: cryptoApi } = useGetCryptosQuery(100);
   console.log(isFetching);
   // const customStyles = {
   //   option: (provided, state) => ({
