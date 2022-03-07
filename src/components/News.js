@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewApi";
-import { useGetCryptosQuery } from "../services/cryptoApi";
+// import { useGetCryptosQuery } from "../services/cryptoApi";
 // import Select from "react-select";
 import moment from "moment";
 
