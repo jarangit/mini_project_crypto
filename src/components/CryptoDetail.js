@@ -22,14 +22,14 @@ import LineChart from "./chart/LineChart";
 
 const CryptoDetail = () => {
   const { coinId } = useParams();
-  const [timeperiod] = useState("7d");
-  const { data, isFetching } = useGetCryptoDetailQuery(coinId);
+  const [timeperiod] = useState("24h");
+  const { data, isFetching } = useGetCryptoDetailQuery(coinId, timeperiod);
   const { data: coinHistory } = useGetCryptoHistoryQuery({
     coinId,
     timeperiod,
   });
   const cryptoDetails = data?.data?.coin;
-  const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
+  // const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
 
   const stats = [
     {
@@ -98,9 +98,11 @@ const CryptoDetail = () => {
   if (isFetching) {
     return "Loading";
   }
+  console.log(data);
   return (
     <div className="coin_detail">
       <div className="coin_detail_title">
+        <img src={data?.data?.coin.iconUrl} alt="" width={50} />
         <h3>
           {data?.data?.coin.name}({cryptoDetails.symbol})
         </h3>
@@ -110,13 +112,15 @@ const CryptoDetail = () => {
         </p>
       </div>
 
-      <div>
+      {/* <div>
         <select name="coin_detail_day" id="coin_detail_day">
           {time.map((item, key) => (
-            <option  key = {key} value={item}>{item}</option>
+            <option key={key} value={item}>
+              {item}
+            </option>
           ))}
         </select>
-      </div>
+      </div> */}
 
       <LineChart
         coinHistory={coinHistory}
@@ -126,7 +130,7 @@ const CryptoDetail = () => {
 
       <div className="coin_detail_stats">
         <div className="coin_detail_stats_title">
-          <h4>{cryptoDetails.name} Value Statistics</h4>
+          <h3>{cryptoDetails.name} Value Statistics</h3>
           <p>
             An overview showing the statistics of {cryptoDetails.name}, such as
             the base and quote currency, the rank, and trading volume.
@@ -135,8 +139,8 @@ const CryptoDetail = () => {
 
         <div className="coin_detail_stats_list">
           {stats.map(({ icon, title, value }, key) => (
-            <div  key = {key} className="coin_detail_stats_item">
-              <div>{icon}</div>
+            <div key={key} className="coin_detail_stats_item">
+              <div className="cion_detail_icon">{icon}</div>
               <div>{title}</div>
               <div>{value}</div>
             </div>
@@ -144,18 +148,20 @@ const CryptoDetail = () => {
         </div>
 
         <div className="coin_detail_other_stats_info">
-          <h4>Other stats info</h4>
+          <h3>Other stats info</h3>
           <p>
             An overview showing the statistics of {cryptoDetails.name}, such as
             the base and quote currency, the rank, and trading volume.
           </p>
-          {genericStats.map(({ icon, title, value },key) => (
-            <div className="coin_detail_other_stats_info_item" key={key}>
-              <div>{icon}</div>
-              <div>{title}</div>
-              <div>{value}</div>
-            </div>
-          ))}
+          <div className="coin_detail_other_stats_info_box">
+            {genericStats.map(({ icon, title, value }, key) => (
+              <div className="coin_detail_other_stats_info_item" key={key}>
+                <div className="cion_detail_icon" >{icon}</div>
+                <div>{title}</div>
+                <div>{value}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

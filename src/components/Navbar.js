@@ -40,14 +40,14 @@ const Navbar = () => {
             Cryptocurrencise
           </Link>
         </div>
-        <div className="side_menu_item">
+        {/* <div className="side_menu_item">
           <Link to="/exchanges">
             <span>
               <MoneyCollectOutlined />
             </span>
             Exchanges
           </Link>
-        </div>
+        </div> */}
         <div className="side_menu_item">
           <Link to="/news">
             <span>

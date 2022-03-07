@@ -1,0 +1,33 @@
+.coin_detail_stats_list{
+  /* background-color: red; */
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+
+}
+
+.coin_detail_stats_item{
+  display: flex;
+  min-height: 70px;
+  align-items: center;
+  border: 1px solid rgb(0, 217, 255);
+  min-width: 200px;
+  border-radius: 20px;
+  padding: 10px;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.coin_detail_other_stats_info_box{
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.cion_detail_icon{
+  color: var(--jr_yl);
+}
+
+.coin_detail_other_stats_info{
+  margin: 50px 0;
+}

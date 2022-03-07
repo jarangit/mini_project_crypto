@@ -27,7 +27,7 @@ const Cryptocurrencies = ({ simplified }) => {
   return (
     <React.Fragment>
       {!simplified && (
-        <div className="search_rypto">
+        <div className="search_crypto">
           <input
             placeholder="Search"
             onChange={(e) => setsearchTerm(e.target.value.toLowerCase())}

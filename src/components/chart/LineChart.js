@@ -9,7 +9,7 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js'
+} from "chart.js";
 
 ChartJS.register(
   CategoryScale,
@@ -19,7 +19,7 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend
-)
+);
 const LineChart = ({ coinHistory, curentPrice, coinName }) => {
   console.log(curentPrice);
   const coinPrice = [];
@@ -39,20 +39,31 @@ const LineChart = ({ coinHistory, curentPrice, coinName }) => {
     labels: coinTimestamp,
     datasets: [
       {
-        label: 'Price In USD',
+        label: "Price In USD",
         data: coinPrice,
         fill: false,
-        backgroundColor: '#0071bd',
-        borderColor: '#0071bd',
+        backgroundColor: "#f5d64c",
+        borderColor: "#f76656",
       },
     ],
   };
 
   const options = {
+    elements: {
+      line: {
+        tension: 0, // disables bezier curves
+      },
+    },
+    plugings: {
+      title: {
+        display: false,
+      },
+    },
     scales: {
       yAxes: [
         {
           ticks: {
+            display:false,
             beginAtZero: true,
           },
         },
@@ -60,16 +71,18 @@ const LineChart = ({ coinHistory, curentPrice, coinName }) => {
     },
   };
   return (
-    <div className="coion_chart" style={{border: "2px solid red"}} >
-      <div className="coin_chart_title">
+    <div className="coion_chart">
+      {/* <div className="coin_chart_title">
         <h3>{coinName}</h3>
-      </div>
+      </div> */}
       <div className="cion_chart_price">
         <div className="price_change">Chamge:{coinHistory?.data?.change}</div>
-        <div className="current_price">Current {coinName} Price: $ {curentPrice}</div>
+        <div className="current_price">
+          Current {coinName} Price: $ {curentPrice}
+        </div>
       </div>
 
-      <Line data = {data} options = {options} />
+      <Line data={data} options={options} />
     </div>
   );
 };

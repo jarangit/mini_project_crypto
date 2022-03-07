@@ -45,3 +45,11 @@
   display: flex;
   gap: 10px;
 }
+
+.new_select{
+  margin: 20px 0;
+}
+
+.new_select>option{
+  background-color: red;
+}

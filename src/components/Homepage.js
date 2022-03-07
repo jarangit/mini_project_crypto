@@ -63,9 +63,9 @@ const Homepage = () => {
 
           <div className="home_heading_container">
             <h1 className="home_title">News</h1>
-            <div className="show_more">
+            <h1 className="show_more">
               <Link to="/news">Show Mores</Link>
-            </div>
+            </h1>
           </div>
           <News simplified />
         </>

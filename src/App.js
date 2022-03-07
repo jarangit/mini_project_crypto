@@ -8,7 +8,6 @@ import {
   Exchanges,
   News,
 } from "./components";
-import Footer from "./components/footer";
 function App() {
   return (
     <div className="app">
@@ -33,7 +32,7 @@ function App() {
               <Route exact path="/news" element={<News />} />
             </Routes>
           </div>
-      <Footer/>
+      {/* <Footer/> */}
       </div>
     </div>
   );

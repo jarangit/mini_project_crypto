@@ -11,6 +11,7 @@ import './styles/home.css'
 import './styles/crypto.css'
 import './styles/new.css'
 import './styles/footer.css'
+import './styles/cryptoDetail.css'
 ReactDOM.render(
   <React.StrictMode>
     <Router>

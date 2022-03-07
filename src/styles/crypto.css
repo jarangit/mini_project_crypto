@@ -33,6 +33,29 @@
   bottom: 10px;
   right: 10px;
 }
-.crypto_name{
+.crypto_name {
   font-weight: 600;
+}
+
+.search_crypto {
+  margin: 20px 0;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search_crypto > input {
+  background-color: var(--jr_black);
+  padding: 10px;
+  width: 100%;
+  border: 2px solid rgb(37, 167, 167);
+  border-radius: 50px;
+  color: white;
+  transition: all 0.2s;
+  margin: 20px 0;
+}
+
+.search_crypto > input:focus {
+  outline: none;
+  border: 2px solid rgb(37, 167, 167);
+  box-shadow: rgba(22, 157, 211, 0.5) 0px 5px 10px -3px, rgba(13, 132, 148, 0.05) 0px 4px 6px -2px;
 }
