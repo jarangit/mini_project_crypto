@@ -10,6 +10,7 @@ import './styles/nav.css'
 import './styles/home.css'
 import './styles/crypto.css'
 import './styles/new.css'
+import './styles/footer.css'
 ReactDOM.render(
   <React.StrictMode>
     <Router>

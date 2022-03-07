@@ -1,6 +1,5 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import { Layout, Typography, Space } from "antd";
+import { Routes, Route } from "react-router-dom";
 import {
   Navbar,
   Homepage,
@@ -9,6 +8,7 @@ import {
   Exchanges,
   News,
 } from "./components";
+import Footer from "./components/footer";
 function App() {
   return (
     <div className="app">
@@ -16,7 +16,6 @@ function App() {
         <Navbar />
       </div>
       <div className="main">
-        <Layout>
           <div className="routes">
             <Routes>
               <Route exact path="/" element={<Homepage />} />
@@ -34,24 +33,7 @@ function App() {
               <Route exact path="/news" element={<News />} />
             </Routes>
           </div>
-        </Layout>
-        <div className="footer">
-          <Typography.Title
-            level={5}
-            style={{ color: "white", textAlign: "center" }}
-          >
-            Copyright © 2021
-            <Link to="/">Cryptoverse Inc.</Link>
-            <br />
-            All Rights Reseved.
-          </Typography.Title>
-
-          <Space>
-            <Link to="/">Home</Link>
-            <Link to="/exchanges">Exchanges</Link>
-            <Link to="/news">News</Link>
-          </Space>
-        </div>
+      <Footer/>
       </div>
     </div>
   );

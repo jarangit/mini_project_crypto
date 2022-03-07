@@ -1,7 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 :root {
-  --jr_black: #171721;
+  --jr_black: #323247;
   --jr_black_fade: rgb(33, 32, 37);
   --jr_pp: #ca50f7;
   --jr_yl: #f5d64c;
@@ -11,12 +10,17 @@ html {
   background: #232228;
   background-size: cover;
   background-repeat: no-repeat;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 body {
   color: white;
   background-size: cover;
   background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.app{
+  min-height: 100vh;
 }
 
 a {

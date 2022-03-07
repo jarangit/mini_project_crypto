@@ -41,7 +41,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="side_menu_item">
-          <Link to="/">
+          <Link to="/exchanges">
             <span>
               <MoneyCollectOutlined />
             </span>
@@ -49,7 +49,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="side_menu_item">
-          <Link to="/">
+          <Link to="/news">
             <span>
               <BulbOutlined />
             </span>
