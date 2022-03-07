@@ -3,6 +3,7 @@ import { useGetCryptoNewsQuery } from "../services/cryptoNewApi";
 // import { useGetCryptosQuery } from "../services/cryptoApi";
 // import Select from "react-select";
 import moment from "moment";
+import Loading from "./Loading";
 
 const News = ({ simplified }) => {
   // const [optionSelect] = useState([]);
@@ -45,7 +46,7 @@ const News = ({ simplified }) => {
   //   }
   // }, [cryptoApi]);
 
-  if (isFetching) return "Loadding";
+  if (isFetching) return <Loading/>;
   return (
     <div>
       {/* <Select

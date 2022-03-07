@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import millify from "millify";
 import { Link } from "react-router-dom";
+import Loading from "./Loading";
 
 const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
@@ -23,7 +24,7 @@ const Cryptocurrencies = ({ simplified }) => {
   }, [cryptosList, searchTerm, cryptos]);
 
   console.log(cryptos);
-  if (isFetching) return "Loading";
+  if (isFetching) return <Loading/>;
   return (
     <React.Fragment>
       {!simplified && (

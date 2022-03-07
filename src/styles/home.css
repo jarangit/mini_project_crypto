@@ -8,8 +8,7 @@
 }
 
 .home_show_data_item {
-  background-color: var(--jr_black);
-  padding: 20px;
+  background-image: linear-gradient(-225deg, #3D4E81 0%, #5753C9 48%, #6E7FF3 100%);  padding: 20px;
   min-width: 200px;
   border-radius: 10px;
   font-weight: 600;

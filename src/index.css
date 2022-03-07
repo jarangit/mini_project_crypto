@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 :root {
-  --jr_black: #323247;
+  --jr_black: #191B2A;
   --jr_black_fade: rgb(33, 32, 37);
   --jr_pp: #ca50f7;
   --jr_yl: #f5d64c;
   --jr_red: #f76656;
+  
 }
 html {
-  background: #232228;
+  background: #111111;
   background-size: cover;
   background-repeat: no-repeat;
   font-family: 'Roboto', sans-serif;
@@ -56,4 +57,10 @@ a {
   .nav_but_close{
     display: block;
   }
+}
+.loader{
+  height: 81vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

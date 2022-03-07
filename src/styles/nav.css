@@ -5,10 +5,10 @@
   z-index: 1;
   top: 0;
   left: 0;
-  background-color:black;
+  background-color:#081c22;
   overflow-x: hidden;
   transition: 0.2s;
-  padding: 20px 0;
+  padding: 20px 20px;
 }
 .logo_container {
   display: flex;

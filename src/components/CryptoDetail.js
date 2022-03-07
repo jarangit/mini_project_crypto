@@ -19,6 +19,7 @@ import {
 
 import HTMLReactParser from "html-react-parser";
 import LineChart from "./chart/LineChart";
+import Loading from "./Loading";
 
 const CryptoDetail = () => {
   const { coinId } = useParams();
@@ -96,7 +97,7 @@ const CryptoDetail = () => {
     },
   ];
   if (isFetching) {
-    return "Loading";
+    return <Loading/>;
   }
   console.log(data);
   return (

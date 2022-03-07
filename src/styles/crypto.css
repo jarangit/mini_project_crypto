@@ -11,7 +11,7 @@
   margin-right: 20px;
 }
 .crypto_card {
-  background-color: var(--jr_black);
+  background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);  /* background-color: var(--jr_black); */
   padding: 10px;
   border-radius: 10px;
   position: relative;
@@ -39,7 +39,7 @@
 
 .search_crypto {
   margin: 20px 0;
-  max-width: 500px;
+  max-width: 200px;
   margin: 0 auto;
 }
 
