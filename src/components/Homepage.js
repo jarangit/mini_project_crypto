@@ -55,17 +55,17 @@ const Homepage = () => {
           </div>
           <div className="home_heading_container">
             <h1 className="home_title">Top 10 in the world</h1>
-            <h1 className="show_more">
+            <div className="show_more">
               <Link to="/cryptocurrencies">Show Mores</Link>
-            </h1>
+            </div>
           </div>
           <Cryptocurrencies simplified={true} />
 
           <div className="home_heading_container">
             <h1 className="home_title">News</h1>
-            <h1 className="show_more">
+            <div className="show_more">
               <Link to="/news">Show Mores</Link>
-            </h1>
+            </div>
           </div>
           <News simplified />
         </>

@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  HomeOutlined,
-  BulbOutlined,
-  FundOutlined,
-} from "@ant-design/icons";
-const Navbar = () => {
+import { HomeOutlined, BulbOutlined, FundOutlined, CloseCircleOutlined } from "@ant-design/icons";
+const Navbar = ({ active, close }) => {
   return (
-    <div className="nav_container">
+    <div className={`nav_container ${active ? "active" : ""} `}>
+      <div onClick={() => close(false)}>
+          <CloseCircleOutlined style={{fontSize: "24px", float: "right", marginBottom: "20px", color: "#ff56ba"}} />
+        </div>
       <div className="logo_container">
         <img
           width={50}
